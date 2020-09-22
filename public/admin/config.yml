@@ -1,12 +1,19 @@
 backend:
   name: git-gateway
+  preview_context: deploy/netlify
   branch: main
 media_folder: public/img
 public_folder: img
+site_url: https://jonstuebe.com
+display_url: https://jonstuebe.com
+publish_mode: editorial_workflow
 collections:
   - name: "posts"
-    label: "Post"
+    label: "Posts"
+    label_singular: "Post"
     folder: "posts"
+    slug: "{{slug}}"
+    preview_path: "posts/{{slug}}"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
