@@ -25,7 +25,7 @@ a {
 
 body {
   background-color: var(--background-color);
-  padding: 0 20px;
+  padding: 0 12px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -41,6 +41,7 @@ a {
 .logotype {
   font-size: 32px;
   color: var(--primary-text-color);
+  margin-left: 24px;
 }
 
 .site-header {
@@ -66,9 +67,9 @@ a {
 }
 
 .post {
-  padding: 32px 24px;
+  padding: 24px 16px;
   background-color: var(--raised-surface-background-color);
-  border-radius: 12px;
+  border-radius: 4px;
 }
 
 .post__title {
@@ -110,4 +111,11 @@ a {
 
 .post__content p:last-of-type {
   margin-bottom: 0;
+}
+
+@media (min-width: 800px) {
+  .post {
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
 }
