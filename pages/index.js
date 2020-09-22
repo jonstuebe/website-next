@@ -1,4 +1,5 @@
 import matter from "gray-matter";
+import { isAfter } from "date-fns";
 
 import Layout from "../components/Layout";
 import PostList from "../components/PostList";
@@ -22,22 +23,31 @@ export async function getStaticProps() {
     const keys = context.keys();
     const values = keys.map(context);
 
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
-      const value = values[index];
-      let document = matter(value.default);
+    return keys
+      .map((key, index) => {
+        let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
+        const value = values[index];
+        let document = matter(value.default);
 
-      if (document.data.date && document.data.date.toISOString) {
-        document.data.date = document.data.date.toISOString();
-      }
-
-      return {
-        frontmatter: document.data,
-        markdownBody: document.content,
-        slug,
-      };
-    });
-    return data;
+        return {
+          frontmatter: document.data,
+          markdownBody: document.content,
+          slug,
+        };
+      })
+      .sort((firstPost, secondPost) => {
+        if (isAfter(firstPost.frontmatter.date, secondPost.frontmatter.date)) {
+          return -1;
+        } else {
+          return 1;
+        }
+      })
+      .map((post) => {
+        if (post.frontmatter.date && post.frontmatter.date.toISOString) {
+          post.frontmatter.date = post.frontmatter.date.toISOString();
+        }
+        return post;
+      });
   })(require.context("../posts", true, /\.md$/));
 
   return {
