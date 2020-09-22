@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import { format, parseISO } from "date-fns";
-import readingTime from "reading-time";
 
 import { serializePostDate, addReadingTime } from "../index";
 
