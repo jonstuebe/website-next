@@ -2,6 +2,7 @@ import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import { format, parseISO } from "date-fns";
 
+import CodeBlock from "../../components/CodeBlock";
 import Layout from "../../components/Layout";
 
 export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
@@ -15,7 +16,10 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
         <h1 className="post__title">{frontmatter.title}</h1>
         <h2 className="post__date">{date}</h2>
         <div className="post__content">
-          <ReactMarkdown source={markdownBody} />
+          <ReactMarkdown
+            source={markdownBody}
+            renderers={{ code: CodeBlock }}
+          />
         </div>
       </article>
     </Layout>

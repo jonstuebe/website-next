@@ -1,9 +1,17 @@
+:root {
+  --primary-text-color: #e1e1e1;
+  --secondary-text-color: #848484;
+
+  --background-color: #121212;
+  --raised-surface-background-color: #1e1e1e;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Kumbh Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -16,20 +24,23 @@ a {
 }
 
 body {
-  background-color: #000;
+  background-color: var(--background-color);
   padding: 0 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-p,
+p {
+  color: var(--secondary-text-color);
+}
+
 a {
-  color: #fff;
+  color: var(--primary-text-color);
 }
 
 .logotype {
   font-size: 32px;
-  color: #fff;
+  color: var(--primary-text-color);
 }
 
 .site-header {
@@ -51,28 +62,33 @@ a {
 }
 
 .post {
-  padding: 20px 16px;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: 32px 24px;
+  background-color: var(--raised-surface-background-color);
   border-radius: 12px;
 }
 
 .post__title {
   font-size: 20px;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 0px;
   margin-bottom: 0px;
-  padding: 0;
-  color: rgba(255, 255, 255, 0.9);
+  padding: 0px;
+  color: var(--primary-text-color);
 }
 
 .post__date {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.65);
+  margin-top: 8px;
+  color: var(--secondary-text-color);
 }
 
-.post__content,
-.post__content p {
-  color: rgba(255, 255, 255, 0.65);
+.post__content p,
+.post__content ol,
+.post__content ul,
+.post__content li {
+  color: var(--secondary-text-color);
+  font-size: 18px;
+  line-height: 1.4;
 }
 
 .post__content p:last-of-type {
