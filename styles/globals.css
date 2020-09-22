@@ -92,6 +92,14 @@ a {
 .post__date {
   font-size: 16px;
   margin-top: 8px;
+  margin-bottom: 8px;
+  color: var(--secondary-text-color);
+}
+
+.post__length {
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: 300;
   color: var(--secondary-text-color);
 }
 

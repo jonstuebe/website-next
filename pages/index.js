@@ -1,8 +1,20 @@
 import matter from "gray-matter";
 import { isAfter } from "date-fns";
+import readingTime from "reading-time";
 
 import Layout from "../components/Layout";
 import PostList from "../components/PostList";
+
+export const serializePostDate = (post) => {
+  if (post.frontmatter.date && post.frontmatter.date.toISOString) {
+    post.frontmatter.date = post.frontmatter.date.toISOString();
+  }
+  return post;
+};
+export const addReadingTime = (post) => {
+  post.frontmatter.length = readingTime(post.markdownBody);
+  return post;
+};
 
 const Index = ({ posts, title, description, ...props }) => {
   return (
@@ -42,12 +54,8 @@ export async function getStaticProps() {
           return 1;
         }
       })
-      .map((post) => {
-        if (post.frontmatter.date && post.frontmatter.date.toISOString) {
-          post.frontmatter.date = post.frontmatter.date.toISOString();
-        }
-        return post;
-      });
+      .map(addReadingTime)
+      .map(serializePostDate);
   })(require.context("../posts", true, /\.md$/));
 
   return {

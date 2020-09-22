@@ -1,6 +1,9 @@
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import { format, parseISO } from "date-fns";
+import readingTime from "reading-time";
+
+import { serializePostDate, addReadingTime } from "../index";
 
 import CodeBlock from "../../components/CodeBlock";
 import Layout from "../../components/Layout";
@@ -15,6 +18,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
       <article className="post">
         <h1 className="post__title">{frontmatter.title}</h1>
         <h2 className="post__date">{date}</h2>
+        <span className="post__length">{frontmatter.length.text}</span>
         <div className="post__content">
           <ReactMarkdown
             source={markdownBody}
@@ -33,15 +37,17 @@ export async function getStaticProps({ ...ctx }) {
   const config = await import(`../../siteconfig.json`);
   let document = matter(content.default);
 
-  if (document.data.date && document.data.date.toISOString) {
-    document.data.date = document.data.date.toISOString();
-  }
+  const post = addReadingTime(
+    serializePostDate({
+      frontmatter: document.data,
+      markdownBody: document.content,
+    })
+  );
 
   return {
     props: {
       siteTitle: config.title,
-      frontmatter: document.data,
-      markdownBody: document.content,
+      ...post,
     },
   };
 }
