@@ -21,7 +21,6 @@ This worked well but was kind of slow. Around 3-6s because of the ui needing to 
 
 I found this package: [`belkin-wemo-command-line-tools`](https://www.npmjs.com/package/belkin-wemo-command-line-tools) which lets you control your wemo devices via bash commands. The trick I had to do was to login to my router (which happens to be google wifi mesh) and find my wemo plug device for my office and reserve the ip. After doing that I simply ran
 
-
 ```bash
 wemo --host 192.168.xx.xxx --action "off"
 ```
@@ -38,4 +37,4 @@ if speakerStateValue is "off" then
 end if
 ```
 
-Hope that helps anyone who is trying to figure out something similar!
+Hope that helps anyone who is trying to figure out something similar! Many thanks to James Borkowski (agilemation).
