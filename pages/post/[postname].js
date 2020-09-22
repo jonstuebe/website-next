@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import { format, parseISO } from "date-fns";
@@ -12,6 +13,17 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
   if (!frontmatter) return <></>;
 
   const date = format(parseISO(frontmatter.date), "PPP");
+
+  useEffect(() => {
+    var links = document.links;
+
+    // set all external links to _blank
+    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+      if (links[i].hostname != window.location.hostname) {
+        links[i].target = "_blank";
+      }
+    }
+  }, []);
 
   return (
     <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
