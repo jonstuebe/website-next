@@ -55,6 +55,10 @@ a {
   padding: 0;
 }
 
+.posts-list .posts-list__item {
+  margin-bottom: 16px;
+}
+
 .posts-list__item {
   margin: 0;
   padding: 0;
@@ -68,7 +72,7 @@ a {
 }
 
 .post__title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -80,6 +84,19 @@ a {
   font-size: 16px;
   margin-top: 8px;
   color: var(--secondary-text-color);
+}
+
+.post__content h2,
+.post__content h3 {
+  color: var(--primary-text-color);
+}
+
+.post__content h2 {
+  font-size: 22px;
+}
+
+.post__content h3 {
+  font-size: 20px;
 }
 
 .post__content p,
