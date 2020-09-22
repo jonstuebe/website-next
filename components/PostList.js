@@ -17,6 +17,9 @@ export default function PostList({ posts }) {
                     <a className="post__title">{post.frontmatter.title}</a>
                   </Link>
                   <h2 className="post__date">{date}</h2>
+                  <span className="post__length">
+                    {post.frontmatter.length.text}
+                  </span>
                   <div className="post__content">
                     <p>{post.frontmatter.summary}</p>
                   </div>
