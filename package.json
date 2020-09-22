@@ -9,6 +9,8 @@
     "export": "next export"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
+    "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "next": "9.5.3",
     "raw-loader": "^4.0.1",

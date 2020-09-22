@@ -1,21 +1,20 @@
-import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
+import { format, parseISO } from "date-fns";
 
 import Layout from "../../components/Layout";
 
 export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
   if (!frontmatter) return <></>;
 
+  const date = format(parseISO(frontmatter.date), "PPP");
+
   return (
     <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
-      <Link href="/">
-        <a>Back to post list</a>
-      </Link>
-      <article>
-        <h1>{frontmatter.title}</h1>
-        <p>By {frontmatter.author}</p>
-        <div>
+      <article className="post">
+        <h1 className="post__title">{frontmatter.title}</h1>
+        <h2 className="post__date">{date}</h2>
+        <div className="post__content">
           <ReactMarkdown source={markdownBody} />
         </div>
       </article>
@@ -28,13 +27,17 @@ export async function getStaticProps({ ...ctx }) {
 
   const content = await import(`../../posts/${postname}.md`);
   const config = await import(`../../siteconfig.json`);
-  const data = matter(content.default);
+  let document = matter(content.default);
+
+  if (document.data.date && document.data.date.toISOString) {
+    document.data.date = document.data.date.toISOString();
+  }
 
   return {
     props: {
       siteTitle: config.title,
-      frontmatter: data.data,
-      markdownBody: data.content,
+      frontmatter: document.data,
+      markdownBody: document.content,
     },
   };
 }

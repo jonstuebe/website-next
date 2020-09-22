@@ -3,15 +3,12 @@ import Link from "next/link";
 export default function Header() {
   return (
     <>
-      <header className="header">
-        <nav className="nav">
+      <header className="site-header">
+        <h1>
           <Link href="/">
-            <a>My Blog</a>
+            <a className="logotype">Jon Stuebe</a>
           </Link>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </nav>
+        </h1>
       </header>
     </>
   );

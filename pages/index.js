@@ -6,8 +6,6 @@ import PostList from "../components/PostList";
 const Index = ({ posts, title, description, ...props }) => {
   return (
     <Layout pageTitle={title}>
-      <h1 className="title">Welcome to my blog!</h1>
-      <p className="description">{description}</p>
       <main>
         <PostList posts={posts} />
       </main>
@@ -27,7 +25,12 @@ export async function getStaticProps() {
     const data = keys.map((key, index) => {
       let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
       const value = values[index];
-      const document = matter(value.default);
+      let document = matter(value.default);
+
+      if (document.data.date && document.data.date.toISOString) {
+        document.data.date = document.data.date.toISOString();
+      }
+
       return {
         frontmatter: document.data,
         markdownBody: document.content,

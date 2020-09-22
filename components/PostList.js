@@ -1,23 +1,33 @@
 import Link from "next/link";
+import { format, parseISO } from "date-fns";
 
 export default function PostList({ posts }) {
   if (posts === "undefined") return null;
 
   return (
     <div>
-      {!posts && <div>No posts!</div>}
-      <ul>
-        {posts &&
-          posts.map((post) => {
+      {posts ? (
+        <ul className="posts-list">
+          {posts.map((post, index) => {
+            const date = format(parseISO(post.frontmatter.date), "PPP");
             return (
-              <li key={post.slug}>
-                <Link href={{ pathname: `/post/${post.slug}` }}>
-                  <a>{post.frontmatter.title}</a>
-                </Link>
+              <li className="posts-list__item" key={post.slug}>
+                <article className="post">
+                  <Link href={{ pathname: `/post/${post.slug}` }}>
+                    <a className="post__title">{post.frontmatter.title}</a>
+                  </Link>
+                  <h2 className="post__date">{date}</h2>
+                  <div className="post__content">
+                    <p>{post.frontmatter.summary}</p>
+                  </div>
+                </article>
               </li>
             );
           })}
-      </ul>
+        </ul>
+      ) : (
+        <div>No posts!</div>
+      )}
     </div>
   );
 }
