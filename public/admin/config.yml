@@ -1,9 +1,7 @@
 backend:
-  name: github
-  repo: jonstuebe/jonstuebe.com
+  name: git-gateway
   preview_context: deploy/netlify
   branch: main
-  site_domain: jonstuebecom.netlify.com
 media_folder: public/img
 public_folder: img
 site_url: https://jonstuebe.com
