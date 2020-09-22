@@ -64,10 +64,6 @@ a {
   padding: 0;
 }
 
-.posts-list .posts-list__item {
-  margin-bottom: 16px;
-}
-
 .posts-list__item {
   margin: 0;
   padding: 0;
@@ -75,6 +71,7 @@ a {
 }
 
 .post {
+  margin-bottom: 16px;
   padding: 24px 16px;
   background-color: var(--raised-surface-background-color);
   border-radius: 4px;
