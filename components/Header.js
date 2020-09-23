@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-export default function Header() {
+import { Sun, Moon } from "./icons";
+
+export default function Header({ mode, setMode }) {
   return (
     <>
       <header className="site-header">
@@ -9,6 +11,12 @@ export default function Header() {
             <a className="logotype">Jon Stuebe</a>
           </Link>
         </h1>
+        <button
+          className="scheme-switcher"
+          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+        >
+          {mode === "light" ? <Sun /> : <Moon />}
+        </button>
       </header>
     </>
   );
