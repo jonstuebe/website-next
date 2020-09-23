@@ -1,8 +1,9 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
-import { Sun, Moon } from "./icons";
+const ThemeSwitcher = dynamic(() => import("./ThemeSwitcher"), { ssr: false });
 
-export default function Header({ mode, setMode }) {
+export default function Header() {
   return (
     <>
       <header className="site-header">
@@ -11,12 +12,7 @@ export default function Header({ mode, setMode }) {
             <a className="logotype">Jon Stuebe</a>
           </Link>
         </h1>
-        <button
-          className="scheme-switcher"
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
-        >
-          {mode === "light" ? <Sun /> : <Moon />}
-        </button>
+        <ThemeSwitcher />
       </header>
     </>
   );
