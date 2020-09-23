@@ -6,6 +6,16 @@
   --raised-surface-background-color: #1e1e1e;
 }
 
+@media (prefers-color-scheme: light) {
+  html {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
+html.light {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 html,
 body {
   padding: 0;
@@ -49,6 +59,15 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.scheme-switcher {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .site-footer {

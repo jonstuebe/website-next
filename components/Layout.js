@@ -1,4 +1,7 @@
 import Head from "next/head";
+
+import { ThemeProvider } from "../hooks/useTheme";
+
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -13,11 +16,13 @@ export default function Layout({ children, pageTitle, ...props }) {
         />
         <title>{pageTitle}</title>
       </Head>
-      <section className="layout">
-        <Header />
-        <div className="content">{children}</div>
-        <Footer />
-      </section>
+      <ThemeProvider>
+        <section className="layout">
+          <Header />
+          <div className="content">{children}</div>
+          <Footer />
+        </section>
+      </ThemeProvider>
     </>
   );
 }

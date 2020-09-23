@@ -1,4 +1,7 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const ThemeSwitcher = dynamic(() => import("./ThemeSwitcher"), { ssr: false });
 
 export default function Header() {
   return (
@@ -9,6 +12,7 @@ export default function Header() {
             <a className="logotype">Jon Stuebe</a>
           </Link>
         </h1>
+        <ThemeSwitcher />
       </header>
     </>
   );
