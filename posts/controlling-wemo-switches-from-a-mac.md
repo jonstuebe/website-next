@@ -38,3 +38,25 @@ end if
 ```
 
 Hope that helps anyone who is trying to figure out something similar! Many thanks to James Borkowski (agilemation).
+
+## *UPDATE 10-31-2020*
+
+It seems as though the package `belkin-wemo-command-line-tools` isn't working anymore. I spent a little bit getting a cli setup using the package `wemo` and published it as [`wemo-cli`](https://github.com/jonstuebe/wemo-cli);
+
+### Install:
+
+```bash
+yarn global add wemo-cli
+```
+
+### Usage:
+
+```bash
+wemo-cli on --ip="192.168.xx.xxx"
+```
+
+or
+
+```bash
+wemo-cli off --ip="192.168.xx.xxx"
+```
