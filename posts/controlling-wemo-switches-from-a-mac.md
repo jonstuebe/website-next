@@ -41,7 +41,7 @@ Hope that helps anyone who is trying to figure out something similar! Many thank
 
 ## *UPDATE 10-31-2020*
 
-It seems as though the package `belkin-wemo-command-line-tools` isn't working anymore. I spent a little bit getting a cli setup using the package `wemo` and published it as `wemo-cli`;
+It seems as though the package `belkin-wemo-command-line-tools` isn't working anymore. I spent a little bit getting a cli setup using the package `wemo` and published it as [`wemo-cli`](https://github.com/jonstuebe/wemo-cli);
 
 ### Install:
 
