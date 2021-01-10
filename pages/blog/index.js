@@ -12,7 +12,7 @@ export default function Posts({ posts }) {
       </Head>
       <Header />
       <main>
-        <h1 className="text-8xl tracking-tight py-32 text-center motion-safe:animate-text-in-slow">
+        <h1 className="text-5xl large:text-8xl tracking-tight py-32 text-center motion-safe:animate-text-in-slow">
           Blog
         </h1>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
