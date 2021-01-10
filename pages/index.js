@@ -55,7 +55,7 @@ export default function Home({ posts }) {
       </Head>
       <Header />
       <main>
-        <h2 className="text-1xl leading-none tracking-normal mt-36 text-blue-400 text-left mb-3 motion-safe:animate-text-in-quick select-none">
+        <h2 className="text-1xl leading-none tracking-normal md:mt-36 mt-24 text-blue-400 text-left mb-3 motion-safe:animate-text-in-quick select-none">
           Hi, my name is Jon
         </h2>
         <h1 className="text-7xl leading-none font-extrabold tracking-tight mt-0 mb-4 text-left motion-safe:animate-text-in select-none">
@@ -87,7 +87,7 @@ export default function Home({ posts }) {
             Twitter
           </a>
         </h2>
-        <section className="mt-36">
+        <section className="md:mt-36 mt-24">
           <h2 className="text-2xl leading-none tracking-tight m-0 text-left mb-4">
             Recent Posts
           </h2>

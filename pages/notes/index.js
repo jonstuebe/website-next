@@ -14,7 +14,7 @@ export default function Notes({ notes }) {
       </Head>
       <Header />
       <main>
-        <h1 className="text-8xl tracking-tight py-32 text-center motion-safe:animate-text-in-slow">
+        <h1 className="text-5xl lg:text-8xl tracking-tight lg:py-32 py-24 text-center motion-safe:animate-text-in-slow">
           Notes
         </h1>
         <section className="flex flex-col space-y-6">
