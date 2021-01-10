@@ -16,7 +16,7 @@ export function Header() {
       </Link>
       <nav className="flex space-x-4">
         <Link passHref href="/">
-          <a className="text-base text-gray-800 dark:text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium no-underline select-none">
+          <a className="hidden md:inline-flex text-base text-gray-800 dark:text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium no-underline select-none">
             home
           </a>
         </Link>
