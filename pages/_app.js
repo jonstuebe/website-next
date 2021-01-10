@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 
+import { Analytics } from "../components/Analytics";
+
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
@@ -8,19 +10,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-28996371-1"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-28996371-1');`,
-          }}
-        />
+        <Analytics />
       </Head>
       <ThemeProvider attribute="class">
         <Component {...pageProps} />
