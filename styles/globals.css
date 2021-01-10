@@ -1,153 +1,228 @@
-:root {
-  --primary-text-color: #e1e1e1;
-  --secondary-text-color: #848484;
+@tailwind components;
+@tailwind utilities;
 
-  --background-color: #121212;
-  --raised-surface-background-color: #1e1e1e;
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    filter: invert(1) hue-rotate(180deg);
+.light code .token {
+  &.atrule {
+    color: #7c4dff;
+  }
+  &.attr-name {
+    color: #39adb5;
+  }
+  &.attr-value {
+    color: #f6a434;
+  }
+  &.attribute {
+    color: #f6a434;
+  }
+  &.boolean {
+    color: #7c4dff;
+  }
+  &.builtin {
+    color: #39adb5;
+  }
+  &.cdata {
+    color: #39adb5;
+  }
+  &.char {
+    color: #39adb5;
+  }
+  &.class {
+    color: #39adb5;
+  }
+  &.class-name {
+    color: #6182b8;
+  }
+  &.comment {
+    color: #aabfc9;
+  }
+  &.constant {
+    color: #7c4dff;
+  }
+  &.deleted {
+    color: #e53935;
+  }
+  &.doctype {
+    color: #aabfc9;
+  }
+  &.entity {
+    color: #e53935;
+  }
+  &.function {
+    color: #7c4dff;
+  }
+  &.hexcode {
+    color: #f76d47;
+  }
+  &.id {
+    color: #7c4dff;
+    font-weight: bold;
+  }
+  &.important {
+    color: #7c4dff;
+    font-weight: bold;
+  }
+  &.inserted {
+    color: #39adb5;
+  }
+  &.keyword {
+    color: #7c4dff;
+  }
+  &.number {
+    color: #f76d47;
+  }
+  &.operator {
+    color: #39adb5;
+  }
+  &.prolog {
+    color: #aabfc9;
+  }
+  &.property {
+    color: #39adb5;
+  }
+  &.pseudo-class {
+    color: #f6a434;
+  }
+  &.pseudo-element {
+    color: #f6a434;
+  }
+  &.punctuation {
+    color: #39adb5;
+  }
+  &.regex {
+    color: #6182b8;
+  }
+  &.selector {
+    color: #e53935;
+  }
+  &.string {
+    color: #f6a434;
+  }
+  &.symbol {
+    color: #7c4dff;
+  }
+  &.tag {
+    color: #e53935;
+  }
+  &.unit {
+    color: #f76d47;
+  }
+  &.url {
+    color: #e53935;
+  }
+  &.variable {
+    color: #e53935;
   }
 }
 
-html.light {
-  filter: invert(1) hue-rotate(180deg);
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Kumbh Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--background-color);
-  padding: 0 12px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-p {
-  color: var(--secondary-text-color);
-}
-
-a {
-  color: var(--primary-text-color);
-}
-
-.logotype {
-  font-size: 32px;
-  color: var(--primary-text-color);
-  margin-left: 24px;
-}
-
-.site-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.scheme-switcher {
-  background: transparent;
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: 24px;
-  height: 24px;
-}
-
-.site-footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.posts-list {
-  margin: 0;
-  padding: 0;
-}
-
-.posts-list__item {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.post {
-  margin-bottom: 16px;
-  padding: 24px 16px;
-  background-color: var(--raised-surface-background-color);
-  border-radius: 4px;
-}
-
-.post__title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 0px;
-  color: var(--primary-text-color);
-}
-
-.post__date {
-  font-size: 16px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  color: var(--secondary-text-color);
-}
-
-.post__length {
-  font-size: 14px;
-  margin-top: 8px;
-  font-weight: 300;
-  color: var(--secondary-text-color);
-}
-
-.post__content h2,
-.post__content h3 {
-  color: var(--primary-text-color);
-}
-
-.post__content h2 {
-  font-size: 22px;
-}
-
-.post__content h3 {
-  font-size: 20px;
-}
-
-.post__content p,
-.post__content ol,
-.post__content ul,
-.post__content li {
-  color: var(--secondary-text-color);
-  font-size: 18px;
-  line-height: 1.4;
-}
-
-.post__content p:last-of-type {
-  margin-bottom: 0;
-}
-
-@media (min-width: 800px) {
-  .post {
-    padding: 32px 24px;
-    border-radius: 12px;
+.dark code .token {
+  &.atrule {
+    color: #c792ea;
+  }
+  &.attr-name {
+    color: #ffcb6b;
+  }
+  &.attr-value {
+    color: #a5e844;
+  }
+  &.attribute {
+    color: #a5e844;
+  }
+  &.boolean {
+    color: #c792ea;
+  }
+  &.builtin {
+    color: #ffcb6b;
+  }
+  &.cdata {
+    color: #80cbc4;
+  }
+  &.char {
+    color: #80cbc4;
+  }
+  &.class {
+    color: #ffcb6b;
+  }
+  &.class-name {
+    color: #f2ff00;
+  }
+  &.comment {
+    color: #616161;
+  }
+  &.constant {
+    color: #c792ea;
+  }
+  &.deleted {
+    color: #ff6666;
+  }
+  &.doctype {
+    color: #616161;
+  }
+  &.entity {
+    color: #ff6666;
+  }
+  &.function {
+    color: #c792ea;
+  }
+  &.hexcode {
+    color: #f2ff00;
+  }
+  &.id {
+    color: #c792ea;
+    font-weight: bold;
+  }
+  &.important {
+    color: #c792ea;
+    font-weight: bold;
+  }
+  &.inserted {
+    color: #80cbc4;
+  }
+  &.keyword {
+    color: #c792ea;
+  }
+  &.number {
+    color: #fd9170;
+  }
+  &.operator {
+    color: #89ddff;
+  }
+  &.prolog {
+    color: #616161;
+  }
+  &.property {
+    color: #80cbc4;
+  }
+  &.pseudo-class {
+    color: #a5e844;
+  }
+  &.pseudo-element {
+    color: #a5e844;
+  }
+  &.punctuation {
+    color: #89ddff;
+  }
+  &.regex {
+    color: #f2ff00;
+  }
+  &.selector {
+    color: #ff6666;
+  }
+  &.string {
+    color: #a5e844;
+  }
+  &.symbol {
+    color: #c792ea;
+  }
+  &.tag {
+    color: #ff6666;
+  }
+  &.unit {
+    color: #fd9170;
+  }
+  &.url {
+    color: #ff6666;
+  }
+  &.variable {
+    color: #ff6666;
   }
 }

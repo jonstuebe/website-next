@@ -17,6 +17,16 @@ collections:
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "notes"
+    label: "Notes"
+    label_singular: "Note"
+    folder: "notes"
+    slug: "{{slug}}"
+    preview_path: "note/{{slug}}"
+    create: true
+    fields:
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }    

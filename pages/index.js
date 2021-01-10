@@ -1,68 +1,125 @@
-import matter from "gray-matter";
-import { isAfter } from "date-fns";
-import readingTime from "reading-time";
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import Head from "next/head";
+import { useTheme } from "next-themes";
 
-import Layout from "../components/Layout";
-import PostList from "../components/PostList";
+import { Header } from "../components/Header";
+import { Card } from "../components/Card";
 
-export const serializePostDate = (post) => {
-  if (post.frontmatter.date && post.frontmatter.date.toISOString) {
-    post.frontmatter.date = post.frontmatter.date.toISOString();
-  }
-  return post;
-};
-export const addReadingTime = (post) => {
-  post.frontmatter.length = readingTime(post.markdownBody);
-  return post;
-};
+import { getAllPosts } from "../lib/api";
 
-const Index = ({ posts, title, description, ...props }) => {
-  return (
-    <Layout pageTitle={title}>
-      <main>
-        <PostList posts={posts} />
-      </main>
-    </Layout>
-  );
-};
+const activities = [
+  "I make apps",
+  "I push pixels",
+  "I create tools",
+  "I build interfaces",
+];
 
-export default Index;
+export default function Home({ posts }) {
+  const { theme } = useTheme();
+  const [activityIndex, setActivityIndex] = useState(0);
+  const activity = useMemo(() => {
+    return activities[activityIndex];
+  }, [activityIndex]);
 
-export async function getStaticProps() {
-  const configData = await import(`../siteconfig.json`);
-
-  const posts = ((context) => {
-    const keys = context.keys();
-    const values = keys.map(context);
-
-    return keys
-      .map((key, index) => {
-        let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
-        const value = values[index];
-        let document = matter(value.default);
-
-        return {
-          frontmatter: document.data,
-          markdownBody: document.content,
-          slug,
-        };
-      })
-      .sort((firstPost, secondPost) => {
-        if (isAfter(firstPost.frontmatter.date, secondPost.frontmatter.date)) {
-          return -1;
-        } else {
-          return 1;
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setActivityIndex((prevIndex) => {
+        if (prevIndex === activities.length - 1) {
+          return 0;
         }
-      })
-      .map(addReadingTime)
-      .map(serializePostDate);
-  })(require.context("../posts", true, /\.md$/));
+
+        return prevIndex++;
+      });
+    }, 3500);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.clear();
+    const style = `background: ${
+      theme === "light" ? "white" : "black"
+    }; color: ${
+      theme === "light" ? "black" : "white"
+    }; font-size: 1.5em; font-family: sans-serif; padding: 8px;`;
+    console.log("%c here to see some my work?", style);
+    console.log("%c shoot me a message on twitter: @jonstuebe", style);
+  }, [theme]);
+
+  return (
+    <>
+      <Head>
+        <title>Home | Jon Stuebe</title>
+      </Head>
+      <Header />
+      <main>
+        <h2 className="text-1xl leading-none tracking-normal mt-36 text-blue-400 text-left mb-3 motion-safe:animate-text-in-quick select-none">
+          Hi, my name is Jon
+        </h2>
+        <h1 className="text-7xl leading-none font-extrabold tracking-tight mt-0 mb-4 text-left motion-safe:animate-text-in select-none">
+          {activity}
+        </h1>
+        <h2 className="text-2xl tracking-tight m-0 text-left max-w-2xl motion-safe:animate-text-in-slow select-none">
+          I'm a senior software engineer at
+          <a
+            href="https://smartrent.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dark:bg-gray-900 bg-gray-200 text-gray-600 dark:text-gray-300 px-1 hover:no-underline"
+          >
+            SmartRent
+          </a>
+          . <br />I also write about code on my
+          <Link passHref href="/blog">
+            <a className="dark:bg-gray-900 bg-gray-200 text-gray-600 dark:text-gray-300 px-1 hover:no-underline">
+              Blog
+            </a>
+          </Link>{" "}
+          and on{" "}
+          <a
+            href="https://twitter.com/jonstuebe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dark:bg-gray-900 bg-gray-200 text-gray-600 dark:text-gray-300 px-1 hover:no-underline"
+          >
+            Twitter
+          </a>
+        </h2>
+        <section className="mt-36">
+          <h2 className="text-2xl leading-none tracking-tight m-0 text-left mb-4">
+            Recent Posts
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {posts.map((post, key) => (
+              <Link passHref href={`/blog/${post.slug}`} key={key}>
+                <a className="no-underline">
+                  <Card
+                    image={post.image}
+                    title={post.title}
+                    className="motion-safe:animate-fade-in"
+                  >
+                    <h3 className="absolute m-0 p-0 text-white opacity-80 text-base bottom-4 left-4">
+                      {post.date}
+                    </h3>
+                  </Card>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
+
+export async function getStaticProps({ params }) {
+  const postsData = getAllPosts(["slug", "title", "date", "image"]).slice(0, 2);
 
   return {
     props: {
-      posts,
-      title: configData.default.title,
-      description: configData.default.description,
+      posts: postsData,
     },
   };
 }
