@@ -3,8 +3,10 @@ title: VSCode 1.49.1 case changing in regex replace
 summary: >-
   I was looking through the VSCode 1.49.1 release notes and saw this cool new
   feature which allows you to do case changing in regex replace.
-date: 2020-09-23T17:26:17.818Z
+date: "2020-09-23T17:26:17.818Z"
+image: https://source.unsplash.com/4oAFasAPftg/3450x2300
 ---
+
 I was looking through the VSCode 1.49.1 release notes and saw this cool new feature which allows you to do case changing in regex replace.
 
 > In June, we added support for changing the case of regex matching groups while doing a Find/Replace in the editor. This month, we've added the same feature for Search/Replace across the workspace. This is done with the modifiers \u\U\l\L, where \u and \l will upper/lowercase a single character, and \U and \L will upper/lowercase the rest of the matching group.
@@ -45,8 +47,8 @@ Ok, so we have react/redux app and have a set of object map for actions for some
 ```javascript
 const actions = {
   increment: "increment",
-  decrement: "decrement"
-}
+  decrement: "decrement",
+};
 ```
 
 Let's see what we can do by using `\U` this time.
