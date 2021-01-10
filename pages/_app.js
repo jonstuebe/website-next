@@ -1,12 +1,26 @@
 import Head from "next/head";
-import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 
-function MyApp({ Component, pageProps }) {
+import "../styles/globals.css";
+
+export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-28996371-1"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28996371-1');`,
+          }}
+        />
       </Head>
       <ThemeProvider attribute="class">
         <Component {...pageProps} />
@@ -14,5 +28,3 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
-export default MyApp;
