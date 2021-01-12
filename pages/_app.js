@@ -9,19 +9,6 @@ export default function App({ Component, pageProps }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-28996371-1"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-28996371-1');`,
-          }}
-        />
       </Head>
       <ThemeProvider attribute="class" defaultTheme="dark">
         <Component {...pageProps} />
