@@ -25,6 +25,10 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
-    "postcss-preset-env": "^6.7.0"
+    "chalk": "^4.1.0",
+    "lodash": "^4.17.20",
+    "postcss-preset-env": "^6.7.0",
+    "prompts": "^2.4.0",
+    "slugify": "^1.4.6"
   }
 }
