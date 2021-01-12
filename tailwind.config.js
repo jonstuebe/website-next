@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -8,6 +10,9 @@ module.exports = {
   plugins: [require("@tailwindcss/typography")],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
       animation: {
         "fade-in-quick":
           "fade-in 250ms ease-in-out 0s 1 normal forwards running",

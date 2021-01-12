@@ -88,7 +88,7 @@ export default function Home({ posts }) {
           </a>
         </h2>
         <section className="md:mt-36 mt-24">
-          <h2 className="text-2xl leading-none tracking-tight m-0 text-left mb-4">
+          <h2 className="text-2xl leading-none tracking-tight m-0 text-left mb-4 select-none">
             Recent Posts
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
