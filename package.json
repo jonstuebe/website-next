@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "cli": "node cli"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.3.1",

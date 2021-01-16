@@ -19,7 +19,7 @@ export function Card({
         src={image}
         alt={imageDescription}
         layout="fill"
-        className="absolute-center"
+        className="absolute absolute-center object-cover"
       />
       <div className="bg-black opacity-50 w-full h-full absolute absolute-center pointer-events-none"></div>
       <div className="opacity-20 bg-gradient-to-t from-black via-black to-transparent w-full h-1/2 absolute bottom-0 left-0 pointer-events-none"></div>
