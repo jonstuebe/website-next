@@ -92,21 +92,23 @@ export default function Home({ posts }) {
             Recent Posts
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {posts.map((post, key) => (
-              <Link passHref href={`/blog/${post.slug}`} key={key}>
-                <a className="no-underline">
-                  <Card
-                    image={post.image}
-                    title={post.title}
-                    className="motion-safe:animate-fade-in"
-                  >
-                    <h3 className="absolute m-0 p-0 text-white opacity-80 text-base bottom-4 left-4">
-                      {post.date}
-                    </h3>
-                  </Card>
-                </a>
-              </Link>
-            ))}
+            {posts.map((post, key) => {
+              return (
+                <Link passHref href={`/blog/${post.slug}`} key={key}>
+                  <a className="no-underline">
+                    <Card
+                      image={post.image}
+                      title={post.title}
+                      className="motion-safe:animate-fade-in"
+                    >
+                      <h3 className="absolute m-0 p-0 text-white opacity-80 text-base bottom-4 left-4">
+                        {post.date}
+                      </h3>
+                    </Card>
+                  </a>
+                </Link>
+              );
+            })}
           </div>
         </section>
       </main>

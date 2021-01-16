@@ -15,7 +15,7 @@ export default function Post({ post, morePosts, preview }) {
     <>
       <Head>
         <title>{post.title} | Jon Stuebe</title>
-        {/* <meta property="og:image" content={post.ogImage.url} /> */}
+        <meta property="og:image" content={post.image} />
       </Head>
       <Header />
       <main>
