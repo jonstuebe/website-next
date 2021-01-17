@@ -38,6 +38,11 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            ol: {
+              "li:before": {
+                display: "none",
+              },
+            },
             blockquote: {
               p: {
                 color: theme("colors.gray.400"),
