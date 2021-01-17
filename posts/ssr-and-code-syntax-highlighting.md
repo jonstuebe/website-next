@@ -1,7 +1,7 @@
 ---
 title: SSR & Code Syntax Highlighting
 summary: >-
-
+  In the past I've had to use a few different code syntax highlighters. Most of them have the same core principles
 date: "2021-01-17T22:22:32.601Z"
 image: https://source.unsplash.com/SyYmXSDnJ54/2550x1700
 ---
