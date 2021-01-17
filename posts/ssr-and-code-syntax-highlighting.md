@@ -32,7 +32,6 @@ Tailwind has the concept of directives that allows you purge unused styles and k
 One of the directives is `@layer`, which allows us to tell tailwind which "bucket" the styles belong to. For this case I used the `base` layer and simply dropped in my styles like so:
 
 ```css
-@layer base {
   .light code .token {
     &.atrule {
       color: #7c4dff;
@@ -70,7 +69,6 @@ One of the directives is `@layer`, which allows us to tell tailwind which "bucke
     }
     ...
   }
-}
 ```
 
 With that I had nice light/dark mode themed code blocks that were server side rendered with Next.js. If you'd like to learn more about directives check out this [documentation page](https://tailwindcss.com/docs/functions-and-directives#layer) on them.
