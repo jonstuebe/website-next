@@ -36,12 +36,6 @@ function toFrontMatter(obj, fields = []) {
       ],
     },
     {
-      type: (prev) => (prev === "note" ? "text" : null),
-      name: "slug",
-      message: `What's the slug?`,
-      validate: (value) => value !== "",
-    },
-    {
       type: (prev) => (prev === "post" ? "text" : null),
       name: "title",
       message: `What's the title?`,
