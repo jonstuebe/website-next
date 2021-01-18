@@ -25,50 +25,46 @@ I was hoping for a way to use their existing styles or possibly augment them wit
 
 I mention this because with the typography plugin in place, it allows me to extend and target css selectors like `pre code` and others that have to do with styling my code blocks. With that I went and picked out a code syntax theme that had both a light/dark mode that I liked and simply grabbed the raw css and dropped it into my tailwind stylesheet.
 
-#### Directives
-
-Tailwind has the concept of directives that allows you purge unused styles and keep your styles organized and outputted in the correct order for cascade purposes.
-
-One of the directives is `@layer`, which allows us to tell tailwind which "bucket" the styles belong to. For this case I used the `base` layer and simply dropped in my styles like so:
+Here's the styles:
 
 ```css
-  .light code .token {
-    &.atrule {
-      color: #7c4dff;
-    }
-    &.attr-name {
-      color: #39adb5;
-    }
-    &.attr-value {
-      color: #f6a434;
-    }
-    &.attribute {
-      color: #f6a434;
-    }
-    &.boolean {
-      color: #7c4dff;
-    }
-    ...
+.light code .token {
+  &.atrule {
+    color: #7c4dff;
   }
+  &.attr-name {
+    color: #39adb5;
+  }
+  &.attr-value {
+    color: #f6a434;
+  }
+  &.attribute {
+    color: #f6a434;
+  }
+  &.boolean {
+    color: #7c4dff;
+  }
+  ...;
+}
 
-  .dark code .token {
-    &.atrule {
-      color: #c792ea;
-    }
-    &.attr-name {
-      color: #ffcb6b;
-    }
-    &.attr-value {
-      color: #a5e844;
-    }
-    &.attribute {
-      color: #a5e844;
-    }
-    &.boolean {
-      color: #c792ea;
-    }
-    ...
+.dark code .token {
+  &.atrule {
+    color: #c792ea;
   }
+  &.attr-name {
+    color: #ffcb6b;
+  }
+  &.attr-value {
+    color: #a5e844;
+  }
+  &.attribute {
+    color: #a5e844;
+  }
+  &.boolean {
+    color: #c792ea;
+  }
+  ...;
+}
 ```
 
 With that I had nice light/dark mode themed code blocks that were server side rendered with Next.js. If you'd like to learn more about directives check out this [documentation page](https://tailwindcss.com/docs/functions-and-directives#layer) on them.
