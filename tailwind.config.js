@@ -1,5 +1,13 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, "$1")
+    .replace(/\.0$/, "");
+const rem = (px) => `${round(px / 16)}rem`;
+const em = (px, base) => `${round(px / base)}em`;
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -54,6 +62,14 @@ module.exports = {
             },
             code: {
               color: theme("colors.gray.700"),
+              padding: theme("spacing.1"),
+              fontSize: rem(18),
+            },
+            "code::before": {
+              content: "",
+            },
+            "code::after": {
+              content: "",
             },
             a: {
               color: theme("colors.gray.600"),
