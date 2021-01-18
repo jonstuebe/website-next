@@ -44,7 +44,7 @@ Here's the styles:
   &.boolean {
     color: #7c4dff;
   }
-  ...;
+  ...
 }
 
 .dark code .token {
@@ -63,7 +63,7 @@ Here's the styles:
   &.boolean {
     color: #c792ea;
   }
-  ...;
+  ...
 }
 ```
 
