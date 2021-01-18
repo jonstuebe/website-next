@@ -19,7 +19,7 @@ export default function Posts({ posts }) {
           <h1 className="text-5xl lg:text-8xl tracking-tight lg:py-32 py-24 text-center motion-safe:animate-text-in-slow select-none">
             Blog
           </h1>
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-24">
             {posts.map((post, key) => {
               return (
                 <Link passHref href={`/blog/${post.slug}`} key={key}>
