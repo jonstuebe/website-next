@@ -1,6 +1,4 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const plugin = require("tailwindcss/plugin");
-const _ = require("lodash");
 
 const round = (num) =>
   num
@@ -9,30 +7,6 @@ const round = (num) =>
     .replace(/\.0$/, "");
 const rem = (px) => `${round(px / 16)}rem`;
 const em = (px, base) => `${round(px / base)}em`;
-
-function generateThemeOptions({
-  prefix,
-  themeValues,
-  transformValue = (value) => value,
-}) {
-  return Object.keys(themeValues).reduce((acc, name) => {
-    if (typeof themeValues[name] === "string") {
-      return {
-        ...acc,
-        [`.${prefix}-${name}`]: transformValue(themeValues[name]),
-      };
-    }
-
-    return {
-      ...acc,
-      ...generateThemeOptions({
-        prefix: `${prefix}-${name}`,
-        transformValue,
-        themeValues: themeValues[name],
-      }),
-    };
-  }, {});
-}
 
 module.exports = {
   future: {
@@ -43,53 +17,7 @@ module.exports = {
   purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
   plugins: [
     require("@tailwindcss/typography"),
-    plugin(function ({ addUtilities, theme, variants }) {
-      const scrollbarUtilities = {
-        ".scrollbar": {
-          "&::-webkit-scrollbar": { width: theme("spacing.4") },
-        },
-        ...generateThemeOptions({
-          prefix: "scrollbar-w",
-          themeValues: theme("spacing"),
-          transformValue: (value) => {
-            return {
-              "&::-webkit-scrollbar": { width: value },
-            };
-          },
-        }),
-        ...generateThemeOptions({
-          prefix: "scrollbar-thumb-rounded",
-          themeValues: theme("borderRadius"),
-          transformValue: (value) => {
-            return {
-              "&::-webkit-scrollbar-thumb": { borderRadius: value },
-            };
-          },
-        }),
-        ...generateThemeOptions({
-          prefix: "scrollbar-thumb",
-          themeValues: theme("colors"),
-          transformValue: (value) => {
-            return {
-              "&::-webkit-scrollbar-thumb": { backgroundColor: value },
-            };
-          },
-        }),
-        ...generateThemeOptions({
-          prefix: "scrollbar-track",
-          themeValues: theme("colors"),
-          transformValue: (value) => {
-            return {
-              "&::-webkit-scrollbar-track": {
-                backgroundColor: value,
-              },
-            };
-          },
-        }),
-      };
-
-      addUtilities(scrollbarUtilities, variants("scrollbar"));
-    }),
+    require("tailwindcss-scrollbar"),
   ],
   theme: {
     extend: {
