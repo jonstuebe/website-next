@@ -19,6 +19,7 @@ export function Card({
         src={image}
         alt={imageDescription}
         layout="fill"
+        decoding="async"
         className="absolute absolute-center object-cover"
       />
       <div className="bg-black opacity-50 w-full h-full absolute absolute-center pointer-events-none"></div>
