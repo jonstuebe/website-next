@@ -67,6 +67,4 @@ Here's the styles:
 }
 ```
 
-With that I had nice light/dark mode themed code blocks that were server side rendered with Next.js. If you'd like to learn more about directives check out this [documentation page](https://tailwindcss.com/docs/functions-and-directives#layer) on them.
-
-If you have any questions about my site, feel free to check it out on [github](https://github.com/jonstuebe/jonstuebe.com) or hit me up on [twitter](https://twitter.com/jonstuebe).
+With that I had nice light/dark mode themed code blocks that were server side rendered with Next.js. If you have any questions about my site, feel free to check it out on [github](https://github.com/jonstuebe/jonstuebe.com) or hit me up on [twitter](https://twitter.com/jonstuebe).
