@@ -5,6 +5,7 @@ import markdownToHtml from "../../lib/markdownToHtml";
 
 import Layout from "../../components/Layout";
 import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import { Note } from "../../components/Note";
 
 export default function Notes({ notes }) {
@@ -15,7 +16,7 @@ export default function Notes({ notes }) {
       </Head>
       <Layout>
         <Header />
-        <main>
+        <main className="pb-8">
           <h1 className="text-5xl lg:text-8xl tracking-tight lg:py-32 py-24 text-center motion-safe:animate-text-in-slow select-none">
             Notes
           </h1>
@@ -25,6 +26,7 @@ export default function Notes({ notes }) {
             ))}
           </section>
         </main>
+        <Footer />
       </Layout>
     </>
   );
