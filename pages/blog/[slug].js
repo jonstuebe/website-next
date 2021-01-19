@@ -4,6 +4,7 @@ import Head from "next/head";
 import Layout from "../../components/Layout";
 import { Header } from "../../components/Header";
 import { PostImage } from "../../components/PostImage";
+import { Footer } from "../../components/Footer";
 
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
@@ -45,6 +46,7 @@ export default function Post({ post, morePosts, preview }) {
               }}
             ></article>
           </main>
+          <Footer />
         </Layout>
       </div>
     </>

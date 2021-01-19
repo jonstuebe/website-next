@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 
 import Layout from "../components/Layout";
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { Card } from "../components/Card";
 
 import { getAllPosts } from "../lib/api";
@@ -30,7 +31,7 @@ export default function Home({ posts }) {
       </Head>
       <Layout>
         <Header />
-        <main>
+        <main className="pb-24">
           <h2 className="text-1xl leading-none tracking-normal md:mt-36 mt-24 text-blue-400 text-left mb-3 motion-safe:animate-text-in-quick select-none">
             Hi, my name is Jon
           </h2>
@@ -88,6 +89,7 @@ export default function Home({ posts }) {
             </div>
           </section>
         </main>
+        <Footer />
       </Layout>
     </>
   );
