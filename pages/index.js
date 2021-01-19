@@ -9,34 +9,8 @@ import { Card } from "../components/Card";
 
 import { getAllPosts } from "../lib/api";
 
-const activities = [
-  "I make apps",
-  "I push pixels",
-  "I create tools",
-  "I build interfaces",
-];
-
 export default function Home({ posts }) {
   const { theme } = useTheme();
-  const [activityIndex, setActivityIndex] = useState(0);
-  const activity = useMemo(() => {
-    return activities[activityIndex];
-  }, [activityIndex]);
-
-  useEffect(() => {
-    let interval = setInterval(() => {
-      setActivityIndex((prevIndex) => {
-        if (prevIndex === activities.length - 1) {
-          return 0;
-        }
-
-        return prevIndex++;
-      });
-    }, 3500);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
 
   useEffect(() => {
     console.clear();
@@ -61,7 +35,7 @@ export default function Home({ posts }) {
             Hi, my name is Jon
           </h2>
           <h1 className="text-7xl leading-none font-extrabold tracking-tight mt-0 mb-4 text-left motion-safe:animate-text-in select-none">
-            {activity}
+            I make apps
           </h1>
           <h2 className="text-2xl tracking-tight m-0 text-left max-w-2xl motion-safe:animate-text-in-slow select-none">
             I'm a senior software engineer at
