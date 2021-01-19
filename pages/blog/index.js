@@ -4,6 +4,7 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 import { getAllPosts } from "../../lib/api";
 
@@ -39,6 +40,7 @@ export default function Posts({ posts }) {
             })}
           </section>
         </main>
+        <Footer />
       </Layout>
     </>
   );
