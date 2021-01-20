@@ -10,6 +10,7 @@
     "cli": "node cli"
   },
   "dependencies": {
+    "@headlessui/react": "^0.2.0",
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.1.0",
     "date-fns": "^2.16.1",
