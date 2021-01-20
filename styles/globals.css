@@ -1,6 +1,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a {
+  margin-left: 0.5rem;
+  span::after {
+    display: inline-block;
+    content: "#";
+  }
+}
+
 @layer utilities {
   @variants hover {
     .blur-0 {
