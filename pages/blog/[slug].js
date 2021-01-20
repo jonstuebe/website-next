@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import { Header } from "../../components/Header";
 import { PostImage } from "../../components/PostImage";
 import { Footer } from "../../components/Footer";
+import { BackToTop } from "../../components/BackToTop";
 
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
@@ -44,7 +45,8 @@ export default function Post({ post, morePosts, preview }) {
               dangerouslySetInnerHTML={{
                 __html: post.content,
               }}
-            ></article>
+            />
+            <BackToTop />
           </main>
           <Footer />
         </Layout>
