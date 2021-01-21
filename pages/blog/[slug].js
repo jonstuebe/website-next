@@ -7,11 +7,15 @@ import { PostImage } from "../../components/PostImage";
 import { Footer } from "../../components/Footer";
 import { BackToTop } from "../../components/BackToTop";
 
+import useScrollProgress from "../../hooks/useScrollProgress";
+
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
+  const scrollProgress = useScrollProgress();
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -34,6 +38,15 @@ export default function Post({ post, morePosts, preview }) {
       <div className="w-full relative">
         <PostImage image={post.image} />
         <Layout className="relative z-10">
+          <div
+            role="progressbar"
+            aria-label="reading progress"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow={scrollProgress * 100}
+            className="h-1 fixed top-0 left-0 border-none bg-gray-300 dark:bg-gray-600 z-10"
+            style={{ width: `${scrollProgress * 100}%` }}
+          />
           <Header />
           <main>
             <h2 className="text-4xl font-extrabold tracking-tight text-center mt-32 mb-2 motion-safe:animate-text-in-slow">
