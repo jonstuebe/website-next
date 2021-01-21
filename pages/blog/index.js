@@ -14,7 +14,7 @@ export default function Posts({ posts }) {
       <Head>
         <title>Blog | Jon Stuebe</title>
         <meta
-          property="description"
+          name="description"
           content="Hi, my name is Jon. Here's some things I've learned recently."
         />
       </Head>

@@ -14,7 +14,7 @@ export default function Notes({ notes }) {
       <Head>
         <title>Notes | Jon Stuebe</title>
         <meta
-          property="description"
+          name="description"
           content="Hi, my name is Jon. Here's some notes of things I've learned recently."
         />
       </Head>
