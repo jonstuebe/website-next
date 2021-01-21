@@ -18,6 +18,7 @@ export default function ThemeSwitcher() {
     <button
       onClick={switchTheme}
       className="bg-transparent text-gray-800 dark:text-gray-400 border-none py-0 px-2 m-0 flex items-center justify-center cursor-pointer"
+      aria-label={`Switch Theme to ${theme === "light" ? "dark" : "light"}`}
     >
       {theme === "light" ? (
         <svg

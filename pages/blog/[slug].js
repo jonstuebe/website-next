@@ -20,6 +20,8 @@ export default function Post({ post, morePosts, preview }) {
     <>
       <Head>
         <title>{post.title} | Jon Stuebe</title>
+        <meta property="description" content={post.summary} />
+
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.summary} />
         <meta property="og:image" content={post.image} />
