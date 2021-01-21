@@ -1,7 +1,7 @@
 ---
 title: Tailwind & Scrollbars
 summary: >-
-
+  While building this site I wanted to customize the scrollbars with css and hoped I could use some tailwindcss classes to do so. I found one plugin but it didn't seem to support dark mode, plus there was a couple of other things I wanted to add. So, I built it.
 date: "2021-01-18T22:44:07.098Z"
 image: https://source.unsplash.com/G9js7s793k4/3450x2300
 ---
