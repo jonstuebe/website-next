@@ -49,7 +49,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            ol: {
+            "ul, ol": {
               "li:before": {
                 display: "none",
               },
