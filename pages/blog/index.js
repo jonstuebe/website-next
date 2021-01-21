@@ -37,6 +37,9 @@ export default function Posts({ posts }) {
                       <h3 className="absolute m-0 p-0 text-white opacity-80 text-base bottom-4 left-4">
                         {post.date}
                       </h3>
+                      <h3 className="absolute m-0 p-0 text-white opacity-80 text-base bottom-4 right-4">
+                        {post.readingTime}
+                      </h3>
                     </Card>
                   </a>
                 </Link>
@@ -51,7 +54,7 @@ export default function Posts({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts(["slug", "title", "date", "image"]);
+  const posts = getAllPosts(["slug", "title", "date", "image", "readingTime"]);
 
   return {
     props: {
