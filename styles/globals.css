@@ -6,9 +6,21 @@
 .prose h3 a,
 .prose h4 a {
   margin-left: 0.5rem;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+
   span::after {
     display: inline-block;
     content: "#";
+  }
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  &:hover a {
+    opacity: 1;
   }
 }
 
