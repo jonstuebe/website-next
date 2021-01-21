@@ -39,6 +39,7 @@ export function BackToTop() {
           ref={ref}
           onClick={onScrollToTop}
           className="w-8 h-8 fixed bottom-4 right-4 p-0 bg-transparent appearance-none border-none"
+          aria-label="back to top"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

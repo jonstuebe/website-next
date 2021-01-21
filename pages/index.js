@@ -28,6 +28,10 @@ export default function Home({ posts }) {
     <>
       <Head>
         <title>Home | Jon Stuebe</title>
+        <meta
+          property="description"
+          content="Hi, my name is Jon. I make apps. I'm a senior software engineer at SmartRent."
+        />
       </Head>
       <Layout>
         <Header />

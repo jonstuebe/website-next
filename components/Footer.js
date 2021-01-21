@@ -8,6 +8,7 @@ export function Footer() {
           href="https://twitter.com/jonstuebe"
           target="_blank"
           rel="noopener noreferrer"
+          alt="jonstuebe's twitter"
         >
           <svg
             role="img"
@@ -23,6 +24,7 @@ export function Footer() {
           href="https://github.com/jonstuebe"
           target="_blank"
           rel="noopener noreferrer"
+          alt="jonstuebe's github"
         >
           <svg
             role="img"
