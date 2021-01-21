@@ -52,9 +52,13 @@ export default function Post({ post, morePosts, preview }) {
             <h2 className="text-4xl font-extrabold tracking-tight text-center mt-32 mb-2 motion-safe:animate-text-in-slow">
               {post.title}
             </h2>
-            <h3 className="text-xl lg:text-2xl text-center font-normal dark:font-light text-gray-600 dark:text-white mt-0 mb-24 motion-safe:animate-text-in-slow">
+            <h3 className="text-xl lg:text-2xl text-center font-normal dark:font-light text-gray-600 dark:text-gray-300 mt-0 mb-2 motion-safe:animate-text-in-slow">
               {post.date}
             </h3>
+            <h4 className="text-xl lg:text-2xl text-center font-normal dark:font-light text-gray-500 dark:text-gray-400 mt-0 mb-24 motion-safe:animate-text-in-slow">
+              {post.readingTime}
+            </h4>
+
             <article
               className="prose dark:prose-dark lg:prose-xl dark:lg:prose-xl w-full lg:max-w-4xl m-auto mb-32 motion-safe:animate-fade-in-slow"
               dangerouslySetInnerHTML={{
@@ -76,6 +80,7 @@ export async function getStaticProps({ params }) {
     "date",
     "slug",
     "content",
+    "readingTime",
     "summary",
     "image",
   ]);
