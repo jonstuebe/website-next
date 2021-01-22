@@ -17,9 +17,9 @@ date: "2021-01-17T22:22:32.601Z"
 
 ### Desk Setup
 
-- I have two [LG 27UD58-B 27 inch 4k monitors](https://smile.amazon.com/gp/product/B01IRQAYPE/ref=ppx_yo_dt_b_asin_title_o09_s01?ie=UTF8&psc=1) mounted on [EleTab Single Monitor Desk Mount's](https://smile.amazon.com/gp/product/B07BF76ZG1/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1).
-- For my audio I have two [Rokit 6's](https://www.amazon.com/KRK-RP6G3-Powered-Studio-Monitor/dp/B00EO5Q6L4) and a [Rokit Subwoofer](https://www.amazon.com/KRK-Watt-Powered-Studio-Subwoofer/dp/B01I46H3FQ) that run into a [Focusrite Scarlett 2i2](https://focusrite.com/en/usb-audio-interface/scarlett/scarlett-2i2) interface.
-- For headphones I have [Bose QC 35's](https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_black).
+- I have two [LG 27UD58-B 27 inch 4k monitors](https://amazon.com/gp/product/B01IRQAYPE?tag=jonstuebe02-20) mounted on [EleTab Single Monitor Desk Mount's](https://amazon.com/gp/product/B07BF76ZG1?tag=jonstuebe02-20).
+- For my audio I have two [Rokit 6's](https://www.amazon.com/KRK-RP6G3-Powered-Studio-Monitor/dp/B00EO5Q6L4?tag=jonstuebe02-20) and a [Rokit Subwoofer](https://www.amazon.com/KRK-Watt-Powered-Studio-Subwoofer/dp/B01I46H3FQ?tag=jonstuebe02-20) that run into a [Focusrite Scarlett 2i2](https://www.amazon.com/Focusrite-Scarlett-Audio-Interface-Tools/dp/B07QR73T66?tag=jonstuebe02-20) interface.
+- For headphones I have [Bose QC 35's](https://www.amazon.com/Bose-QuietComfort-Wireless-Headphones-Cancelling/dp/B0756CYWWD?tag=jonstuebe02-20).
 
 ### Editor
 
