@@ -2,6 +2,25 @@
 date: "2021-01-17T22:22:32.601Z"
 ---
 
+### Desktop Apps
+
+- [Airfoil](https://rogueamoeba.com/airfoil/mac/) for playing music on various devices in my house w/ proper audio syncing.
+- [Alfred](https://www.alfredapp.com/), which I've been using for years and am still loving it. Especially when you add all of the various workflows that exist. I even made one that controls my office speakers.
+- [Bartender](https://www.macbartender.com/) for cleaning up my menu bar.
+- [CleanShot X](https://cleanshot.com/) for taking screenshots, recording videos, and making gif's.
+- [Krisp](https://krisp.ai/) for muting background noise.
+- [LittleIpsum](https://apps.apple.com/us/app/littleipsum/id405772121?mt=12) for generating lorem ipsum from my menu bar.
+- [Paprika](https://www.paprikaapp.com/) for managing and syncing recipes across my devices.
+- [Postico](https://eggerapps.at/postico/) for browsing and navigating around Postgres db's.
+- [Rocket](http://matthewpalmer.net/rocket/) for picking emoji's slack style but OS wide.
+- [SoundSource](https://rogueamoeba.com/soundsource/) for better system audio controls.
+
+### Desk Setup
+
+- I have two [LG 27UD58-B 27 inch 4k monitors](https://smile.amazon.com/gp/product/B01IRQAYPE/ref=ppx_yo_dt_b_asin_title_o09_s01?ie=UTF8&psc=1) mounted on [EleTab Single Monitor Desk Mount's](https://smile.amazon.com/gp/product/B07BF76ZG1/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1).
+- For my audio I have two [Rokit 6's](https://www.amazon.com/KRK-RP6G3-Powered-Studio-Monitor/dp/B00EO5Q6L4) and a [Rokit Subwoofer](https://www.amazon.com/KRK-Watt-Powered-Studio-Subwoofer/dp/B01I46H3FQ) that run into a [Focusrite Scarlett 2i2](https://focusrite.com/en/usb-audio-interface/scarlett/scarlett-2i2) interface.
+- For headphones I have [Bose QC 35's](https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_black).
+
 ### Editor
 
 I've used a number of editors over the years, but right now I'm using [Visual Studio Code](https://code.visualstudio.com/).
@@ -31,22 +50,3 @@ I've used a number of editors over the years, but right now I'm using [Visual St
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [Template String Converter](https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter)
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
-
-### Desktop Apps
-
-- [Airfoil](https://rogueamoeba.com/airfoil/mac/) for playing music on various devices in my house w/ proper audio syncing.
-- [Alfred](https://www.alfredapp.com/), which I've been using for years and am still loving it. Especially when you add all of the various workflows that exist. I even made one that controls my office speakers.
-- [Bartender](https://www.macbartender.com/) for cleaning up my menu bar.
-- [CleanShot X](https://cleanshot.com/) for taking screenshots, recording videos, and making gif's.
-- [Krisp](https://krisp.ai/) for muting background noise.
-- [LittleIpsum](https://apps.apple.com/us/app/littleipsum/id405772121?mt=12) for generating lorem ipsum from my menu bar.
-- [Paprika](https://www.paprikaapp.com/) for managing and syncing recipes across my devices.
-- [Postico](https://eggerapps.at/postico/) for browsing and navigating around Postgres db's.
-- [Rocket](http://matthewpalmer.net/rocket/) for picking emoji's slack style but OS wide.
-- [SoundSource](https://rogueamoeba.com/soundsource/) for better system audio controls.
-
-### Desk Setup
-
-- I have two [LG 27UD58-B 27 inch 4k monitors](https://smile.amazon.com/gp/product/B01IRQAYPE/ref=ppx_yo_dt_b_asin_title_o09_s01?ie=UTF8&psc=1) mounted on [EleTab Single Monitor Desk Mount's](https://smile.amazon.com/gp/product/B07BF76ZG1/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1).
-- For my audio I have two [Rokit 6's](https://www.amazon.com/KRK-RP6G3-Powered-Studio-Monitor/dp/B00EO5Q6L4) and a [Rokit Subwoofer](https://www.amazon.com/KRK-Watt-Powered-Studio-Subwoofer/dp/B01I46H3FQ) that run into a [Focusrite Scarlett 2i2](https://focusrite.com/en/usb-audio-interface/scarlett/scarlett-2i2) interface.
-- For headphones I have [Bose QC 35's](https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_black).
