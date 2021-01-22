@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "cli": "node cli"
+    "cli": "node cli",
+    "tw-config": "tailwind-config-viewer"
   },
   "dependencies": {
     "@headlessui/react": "^0.2.0",
@@ -36,6 +37,7 @@
     "lodash": "^4.17.20",
     "postcss-preset-env": "^6.7.0",
     "prompts": "^2.4.0",
-    "slugify": "^1.4.6"
+    "slugify": "^1.4.6",
+    "tailwind-config-viewer": "^1.5.0"
   }
 }
