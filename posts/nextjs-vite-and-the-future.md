@@ -10,9 +10,9 @@ At my [day job](https://smartrent.com), I work on a lot of developer tooling and
 
 In different research phases I've picked up [Next.js](https://nextjs.org/) and have tried making it the foundation of our projects. But as many of you know, tooling is hard. We have a component library written in typescript to think about. Utility packages, hook packages. But after a lot of struggling and frustration I ended up getting it working (or so I thought).
 
-What I noticed was spikes of memory usage that kept growing over time to where the dev server would eventually spit out a v8 memory error and quit. I tried diagnosing it and found myself down a rabbit hole of how the guts of Next.js work. What I found was disturbingly complicated. I mean knew building a SSR meta-framework on top of React would be complicated, but oh I didn't realize how difficult.
+What I noticed was spikes of memory usage that kept growing over time to where the dev server would eventually spit out a v8 memory error and quit. I tried diagnosing it and found myself down a rabbit hole of how the guts of Next.js work. As I dug, I found that Next.js is a labyrinth of configs, plugins, and abstracted magic. I mean knew building a SSR meta-framework on top of React would be complicated, but oh I didn't realize how much.
 
-I found tons of custom webpack loaders, aliases, babel plugins, etc. Each of them making me more confused on how this is even remotely "stable". I say that with love to the whole vercel org and all of the hard work they doing. Honestly, Next.js is a great product that works really well for lots of situtations.
+I found tons of custom webpack loaders, aliases, babel plugins, etc. Each of them making me more confused on how we don't have more memory leaks and issues. I say that with love to the whole vercel org and all of the hard work they doing. Honestly, Next.js is a great product that works really well for lots of situtations.
 
 However, I personally found that if you want to use it with a lot of customizations, which most larger apps end up needing, you end up with a monstrosity of a config with hundreds of dependencies that you need to worry about all playing with each other.
 
